@@ -1,0 +1,10 @@
+# Dependencies
+/external/
+
+# Output files
+*.o
+*.exe
+*.dll
+
+# Windows environment files
+*.lnk
