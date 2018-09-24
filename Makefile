@@ -20,15 +20,17 @@ DUMMY_TARGET=dummy-app.exe
 
 TARGET=pluginAlpha.dll
 
+INSTALL_PATH="C:\Program Files (x86)\Steam\SteamApps\common\Fallout 4\Data\F4SE\Plugins\$(TARGET)"
+
 GIT=git
 CPP=g++
 LD=g++
 
-.PHONY: default depend clean dist-clean dummy-app
+.PHONY: default depend clean dist-clean dummy-app install
 
 default: all
 
-all: $(TARGET)
+all: install
 
 $(F4SE_DIR):
 	$(GIT) $(GITFLAGS) clone $(F4SE_REPO) -b $(F4SE_TAG) $@
@@ -43,6 +45,9 @@ dummy-app: depend $(DUMMY_SRCS) $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(LD) $(LDFLAGS) $< -o $@
+
+install: $(TARGET)
+	cp $(TARGET) $(INSTALL_PATH)
 
 tidy:
 	rm -f $(OBJS)
