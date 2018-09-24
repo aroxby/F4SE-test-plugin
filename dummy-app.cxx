@@ -1,5 +1,6 @@
 #include <cassert>
 #define _DUMMY_BUILD
+#include "compat.h"
 #include "plugin.h"
 
 int main() {

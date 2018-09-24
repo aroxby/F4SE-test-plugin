@@ -1,12 +1,6 @@
 #ifndef _PLUGIN_H_
 #define _PLUGIN_H_
 
-// F4SE is missing these type definitions
-// Perhaps they're standard in MSVC
-#include <cstdint>
-typedef uint32_t UInt32;
-typedef uint64_t UInt64;
-
 #include "f4se/PluginAPI.h"
 
 #ifdef _DUMMY_BUILD
