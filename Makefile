@@ -12,7 +12,7 @@ SRC_DIR=.
 SRCS=$(shell find $(SRC_DIR) -name '*.cpp' -not -path './$(EXT_DIR)/*')
 OBJS=$(subst .cpp,.o,$(SRCS))
 INCLUDE=$(SRC_INC) $(F4SE_INC)
-CPPFLAGS=$(foreach d, $(INCLUDE), -I$d)
+CPPFLAGS=$(foreach d, $(INCLUDE), -I$d) -m64
 LDFLAGS=-shared
 
 DUMMY_SRCS=dummy-app.cxx
@@ -23,8 +23,8 @@ TARGET=pluginAlpha.dll
 INSTALL_PATH="C:\Program Files (x86)\Steam\SteamApps\common\Fallout 4\Data\F4SE\Plugins\$(TARGET)"
 
 GIT=git
-CPP=g++
-LD=g++
+CPP=x86_64-w64-mingw32-g++
+LD=x86_64-w64-mingw32-g++
 
 .PHONY: default depend clean dist-clean dummy-app install
 
