@@ -26,7 +26,7 @@ GIT=git
 CPP=x86_64-w64-mingw32-g++
 LD=x86_64-w64-mingw32-g++
 
-.PHONY: default depend clean dist-clean dummy-app install
+.PHONY: clean default depend dist-clean dummy-app install
 
 default: all
 
@@ -37,8 +37,10 @@ $(F4SE_DIR):
 
 depend: $(DEPENDS)
 
-dummy-app: depend $(DUMMY_SRCS) $(TARGET)
-	$(CPP) $(CPPFLAGS) $(DUMMY_SRCS) $(TARGET) -o $(DUMMY_TARGET)
+dummy-app: $(DUMMY_TARGET)
+
+$(DUMMY_TARGET): $(DUMMY_SRCS) $(TARGET)
+	$(CPP) $(CPPFLAGS) $(DUMMY_SRCS) $(TARGET) -o $@
 
 %.o: %.cpp depend
 	$(CPP) $(CPPFLAGS) -c $< -o $@
