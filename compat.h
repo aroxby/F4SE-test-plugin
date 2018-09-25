@@ -4,7 +4,6 @@
 // F4SE is missing these type definitions
 // Perhaps they're standard in MSVC
 #include <cstdint>
-#include <stdint.h>
 typedef uint32_t UInt32;
 typedef uint64_t UInt64;
 
