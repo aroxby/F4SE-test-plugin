@@ -1,8 +1,7 @@
 #ifndef _COMPAT_H_
 #define _COMPAT_H_
 
-// F4SE is missing these type definitions
-// Perhaps they're standard in MSVC
+// This prevents us from having to try to compile the F4SE PCH
 #include <cstdint>
 typedef uint32_t UInt32;
 typedef uint64_t UInt64;
