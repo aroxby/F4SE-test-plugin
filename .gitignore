@@ -3,8 +3,12 @@
 
 # Output files
 *.o
+*.a
 *.exe
 *.dll
+
+# Logs
+*.log
 
 # Windows environment files
 *.lnk
