@@ -77,6 +77,7 @@ tidy:
 
 clean: tidy
 	rm -rf $(TARGET)
+	rm -rf $(DUMMY_TARGET)
 
 dist-clean: clean f4se_clean
 	rm -rf $(EXT_DIR)
