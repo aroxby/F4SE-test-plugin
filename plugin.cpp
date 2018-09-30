@@ -1,4 +1,5 @@
-#include "compat.h"
+#include <cstdio>
+#include <string>
 #include "plugin.h"
 
 DLLFUNC bool F4SEPlugin_Query(const F4SEInterface * f4se, PluginInfo * info)
