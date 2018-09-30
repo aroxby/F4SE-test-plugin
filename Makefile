@@ -34,7 +34,7 @@ CPP=x86_64-w64-mingw32-g++
 GIT=git
 LD=x86_64-w64-mingw32-g++
 
-.PHONY: clean default depend dist-clean dummy-app f4se_clean f4se_tidy install
+.PHONY: clean default depend dist-clean dummy-app f4se_clean f4se_tidy fallout install
 
 default: all
 
@@ -68,6 +68,9 @@ f4se_clean: f4se_tidy
 # FIXME: Do not copy if the plugin isn't newer
 install: $(TARGET)
 	cp $(TARGET) $(INSTALL_PATH)
+
+fallout: install
+	cd "C:\Program Files (x86)\Steam\SteamApps\common\Fallout 4" ; ./f4se_loader.exe
 
 tidy:
 	rm -f $(OBJS)
